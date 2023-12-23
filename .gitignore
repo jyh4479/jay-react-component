@@ -23,3 +23,6 @@ stories
 *.njsproj
 *.sln
 *.sw?
+
+storybook-static
+.gitattributes
