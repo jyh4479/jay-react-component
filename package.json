@@ -1,0 +1,21 @@
+{
+  "name": "jay-react-component",
+  "version": "1.0.0",
+  "repository": "https://github.com/jyh4479/jay-react-component.git",
+  "author": "jyh4479 <jyh.dev@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {},
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.23.3",
+    "@storybook/addon-actions": "^7.6.6",
+    "@storybook/addon-links": "^7.6.6",
+    "@storybook/addons": "^7.6.6",
+    "@storybook/react": "^7.6.6",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3"
+  }
+}
