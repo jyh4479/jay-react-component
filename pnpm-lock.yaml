@@ -4,64 +4,71 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-devDependencies:
-  '@babel/preset-react':
-    specifier: ^7.23.3
-    version: 7.23.3(@babel/core@7.23.6)
-  '@babel/preset-typescript':
-    specifier: ^7.23.3
-    version: 7.23.3(@babel/core@7.23.6)
-  '@storybook/addon-essentials':
-    specifier: ^7.6.6
-    version: 7.6.6(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)
-  '@storybook/addon-interactions':
-    specifier: ^7.6.6
-    version: 7.6.6
-  '@storybook/addon-links':
-    specifier: ^7.6.6
-    version: 7.6.6(react@18.2.0)
-  '@storybook/addon-onboarding':
-    specifier: ^1.0.10
-    version: 1.0.10(react-dom@18.2.0)(react@18.2.0)
-  '@storybook/blocks':
-    specifier: ^7.6.6
-    version: 7.6.6(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)
-  '@storybook/react':
-    specifier: ^7.6.6
-    version: 7.6.6(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)
-  '@storybook/react-vite':
-    specifier: ^7.6.6
-    version: 7.6.6(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)(vite@5.0.10)
-  '@storybook/test':
-    specifier: ^7.6.6
-    version: 7.6.6
-  '@types/react':
-    specifier: ^18.2.45
-    version: 18.2.45
-  '@types/react-dom':
-    specifier: ^18.2.18
-    version: 18.2.18
-  babel-loader:
-    specifier: ^9.1.3
-    version: 9.1.3(@babel/core@7.23.6)(webpack@5.89.0)
-  react:
-    specifier: ^18.2.0
-    version: 18.2.0
-  react-dom:
-    specifier: ^18.2.0
-    version: 18.2.0(react@18.2.0)
-  storybook:
-    specifier: ^7.6.6
-    version: 7.6.6
-  ts-loader:
-    specifier: ^9.5.1
-    version: 9.5.1(typescript@5.3.3)(webpack@5.89.0)
-  typescript:
-    specifier: ^5.3.3
-    version: 5.3.3
-  vite:
-    specifier: ^5.0.10
-    version: 5.0.10
+importers:
+
+  .:
+    devDependencies:
+      '@babel/preset-react':
+        specifier: ^7.23.3
+        version: 7.23.3(@babel/core@7.23.6)
+      '@babel/preset-typescript':
+        specifier: ^7.23.3
+        version: 7.23.3(@babel/core@7.23.6)
+      '@storybook/addon-essentials':
+        specifier: ^7.6.6
+        version: 7.6.6(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/addon-interactions':
+        specifier: ^7.6.6
+        version: 7.6.6
+      '@storybook/addon-links':
+        specifier: ^7.6.6
+        version: 7.6.6(react@18.2.0)
+      '@storybook/addon-onboarding':
+        specifier: ^1.0.10
+        version: 1.0.10(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/blocks':
+        specifier: ^7.6.6
+        version: 7.6.6(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/react':
+        specifier: ^7.6.6
+        version: 7.6.6(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)
+      '@storybook/react-vite':
+        specifier: ^7.6.6
+        version: 7.6.6(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)(vite@5.0.10)
+      '@storybook/test':
+        specifier: ^7.6.6
+        version: 7.6.6
+      '@types/react':
+        specifier: ^18.2.45
+        version: 18.2.45
+      '@types/react-dom':
+        specifier: ^18.2.18
+        version: 18.2.18
+      babel-loader:
+        specifier: ^9.1.3
+        version: 9.1.3(@babel/core@7.23.6)(webpack@5.89.0)
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+      storybook:
+        specifier: ^7.6.6
+        version: 7.6.6
+      ts-loader:
+        specifier: ^9.5.1
+        version: 9.5.1(typescript@5.3.3)(webpack@5.89.0)
+      typescript:
+        specifier: ^5.3.3
+        version: 5.3.3
+      vite:
+        specifier: ^5.0.10
+        version: 5.0.10
+
+  packages/button: {}
+
+  packages/date-range-picker: {}
 
 packages:
 
