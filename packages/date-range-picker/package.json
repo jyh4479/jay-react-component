@@ -1,5 +1,8 @@
 {
   "name": "date-range-picker",
   "version": "1.0.0",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@jay-component/style": "workspace:*"
+  }
 }

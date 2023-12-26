@@ -1,16 +1,18 @@
-import React from 'react';
-import {Meta, Story} from '@storybook/react';
+import {Meta, StoryObj} from '@storybook/react';
 import Button from './Button';
 
-export default {
-    title: 'Button',
+const meta = {
+    title: "Component/Button",
     component: Button,
-} as Meta;
+    parameters: {
+        layout: 'centered',
+    },
+    tags: ['autodocs'],
+    argTypes: {}
+} as Meta<typeof Button>;
 
-const Template: Story = (args) => <Button {...args} />;
+export default meta;
 
-export const Default = Template.bind({});
-Default.args = {
-    children: 'Click me',
-    onClick: () => console.log('Button clicked'),
-};
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {};

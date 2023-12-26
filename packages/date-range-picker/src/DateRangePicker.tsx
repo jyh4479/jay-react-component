@@ -1,5 +1,6 @@
 import React, {FunctionComponent, useState} from "react";
 import {SELECT_MODE} from "./data";
+import "./index.css";
 
 const DateRangePicker: FunctionComponent = () => {
 
@@ -9,7 +10,7 @@ const DateRangePicker: FunctionComponent = () => {
     const [selectMode, setSelectMode] = useState<string>(SELECT_MODE.DAY);
 
     return (
-        <div>Date picker</div>
+        <div className={`date-picker-layout`}>Date picker</div>
     )
 }
 

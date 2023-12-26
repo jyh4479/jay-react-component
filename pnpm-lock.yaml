@@ -66,9 +66,19 @@ importers:
         specifier: ^5.0.10
         version: 5.0.10
 
-  packages/button: {}
+  packages/button:
+    dependencies:
+      jay-react-component:
+        specifier: ^1.0.0
+        version: link:../..
 
-  packages/date-range-picker: {}
+  packages/date-range-picker:
+    dependencies:
+      '@jay-component/style':
+        specifier: workspace:*
+        version: link:../style
+
+  packages/style: {}
 
 packages:
 
