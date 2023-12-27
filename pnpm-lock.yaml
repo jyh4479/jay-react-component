@@ -74,14 +74,14 @@ importers:
 
   packages/date-range-picker:
     dependencies:
-      '@jay-component/style':
+      '@jay-component/stylesheet':
         specifier: workspace:*
-        version: link:../style
+        version: link:../stylesheet
       jay-react-component:
         specifier: ^1.0.0
         version: link:../..
 
-  packages/style: {}
+  packages/stylesheet: {}
 
 packages:
 
