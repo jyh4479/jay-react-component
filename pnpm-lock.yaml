@@ -77,6 +77,9 @@ importers:
       '@jay-component/style':
         specifier: workspace:*
         version: link:../style
+      jay-react-component:
+        specifier: ^1.0.0
+        version: link:../..
 
   packages/style: {}
 
