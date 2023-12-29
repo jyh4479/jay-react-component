@@ -1,0 +1,45 @@
+@import "@jay-component/stylesheet";
+
+.date-picker-layout {
+    padding: 4px 11px;
+    border: 1px var(--jay-gray-500) solid;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.date-picker-layout > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.date-picker-layout > div > input {
+    border: none;
+    outline: none;
+}
+
+.date-picker-layout > div > input::placeholder {
+    color: var(--jay-gray-500);
+}
+
+.date-picker-arrow-svg {
+    padding: 0 8px;
+    width: 1em;
+    height: 1em;
+    stroke: var(--jay-gray-500);
+    fill: var(--jay-gray-500);
+}
+
+.date-picker-calendar-svg {
+    width: 1em;
+    height: 1em;
+    stroke: var(--jay-gray-500);
+    fill: var(--jay-white);
+}
+
+.test {
+    color: var(--jay-gray-500);
+}
+
