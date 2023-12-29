@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "license": "MIT",
   "dependencies": {
-    "@jay-component/style": "workspace:*"
-  }
+    "@jay-component/stylesheet": "workspace:*",
+    "@jay-component/portal": "workspace:*"
+  },
+  "source": "./src/index.ts"
 }

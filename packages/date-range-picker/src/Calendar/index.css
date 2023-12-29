@@ -1,0 +1,8 @@
+@import "@jay-component/stylesheet";
+
+.calendar-layout {
+    width: 300px;
+    height: 300px;
+    border-radius: 6px;
+    box-shadow: 0 0 50px var(--jay-gray-500);
+}
