@@ -2,7 +2,23 @@
   "name": "@jay-component/portal",
   "version": "1.0.0",
   "license": "MIT",
-  "dependencies": {
+  "peerDependencies": {
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "react": "^16.8 || ^17.0 || ^18.0",
+    "react-dom": "^16.8 || ^17.0 || ^18.0",
+    "scheduler": "0.23.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    },
+    "@types/react-dom": {
+      "optional": true
+    },
+    "scheduler": {
+      "optional": true
+    }
   },
   "source": "./src/index.ts",
   "main": "./src/index.js"
