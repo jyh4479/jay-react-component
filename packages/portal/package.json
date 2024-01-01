@@ -7,7 +7,7 @@
     "@types/react-dom": "*",
     "react": "^16.8 || ^17.0 || ^18.0",
     "react-dom": "^16.8 || ^17.0 || ^18.0",
-    "scheduler": "0.23.0"
+    "scheduler": "^0.23.0"
   },
   "peerDependenciesMeta": {
     "@types/react": {
@@ -20,6 +20,10 @@
       "optional": true
     }
   },
-  "source": "./src/index.ts",
-  "main": "./src/index.js"
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ]
 }

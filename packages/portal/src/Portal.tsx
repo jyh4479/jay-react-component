@@ -1,13 +1,13 @@
 import React, {FunctionComponent, ReactNode, useEffect} from "react";
 import {createPortal} from "react-dom";
 
-interface propsType {
+export interface PortalProps {
     children?: ReactNode
 }
 
 const PORTAL_ID = "jay-portal-root";
 
-const Portal: FunctionComponent<propsType> = (props: propsType) => {
+export const Portal: FunctionComponent<PortalProps> = (props: PortalProps) => {
 
     const {children} = props;
 
@@ -30,5 +30,3 @@ const Portal: FunctionComponent<propsType> = (props: propsType) => {
 
     return createPortal(children, el);
 };
-
-export default Portal;
