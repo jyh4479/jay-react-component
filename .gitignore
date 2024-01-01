@@ -27,3 +27,4 @@ storybook-static
 .gitattributes
 
 .cache
+.parcel-cache
