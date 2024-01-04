@@ -3,7 +3,7 @@ import {SELECT_MODE} from "./data";
 import {Calendar as CalendarSvg, SwapRight as SwapRightSvg} from "./svg";
 import Calendar from "./Calendar";
 import "./index.css";
-import {Portal} from "@jay-component/portal";
+import {Portal} from "@jay-react-component/portal";
 
 const DateRangePicker: FunctionComponent = () => {
 
