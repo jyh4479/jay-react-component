@@ -2,6 +2,7 @@
   "name": "@jay-react-component/portal",
   "version": "0.0.1",
   "license": "MIT",
+  "type": "module",
   "peerDependencies": {
     "@types/react": "*",
     "@types/react-dom": "*",
@@ -20,8 +21,9 @@
       "optional": true
     }
   },
-  "source": "src/index.ts",
-  "main": "dist/index.js",
+  "source": "./src/index.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "files": [
     "dist",
     "README.md"
