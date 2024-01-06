@@ -1,12 +1,17 @@
 {
-  "name": "@jay-component/stylesheet",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.css",
+  "name": "@jay-react-component/stylesheet",
+  "private": false,
+  "version": "0.0.1",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "source": "./src/index.css",
+  "style": "./dist/index.css",
+  "files": [
+    "dist"
+  ],
+  "description": ""
 }

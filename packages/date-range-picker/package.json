@@ -1,10 +1,45 @@
 {
-  "name": "date-range-picker",
-  "version": "1.0.0",
+  "name": "@jay-react-component/date-range-picker",
+  "version": "0.0.1",
   "license": "MIT",
   "dependencies": {
-    "@jay-component/stylesheet": "workspace:*",
-    "@jay-component/portal": "workspace:*"
+    "react": "^18.2.0",
+    "@jay-react-component/portal": "workspace:*",
+    "@jay-react-component/stylesheet": "workspace:*"
   },
-  "source": "./src/index.ts"
+  "devDependencies": {},
+  "peerDependencies": {
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "react": "^16.8 || ^17.0 || ^18.0",
+    "react-dom": "^16.8 || ^17.0 || ^18.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    },
+    "@types/react-dom": {
+      "optional": true
+    }
+  },
+  "source": "./src/index.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jyh4479/jay-react-component.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jyh4479/jay-react-component/issues"
+  },
+  "homepage": "https://github.com/jyh4479/jay-react-component#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "description": ""
 }
