@@ -38,6 +38,7 @@
     "build-storybook": "storybook build",
     "install:all": "pnpm install --recursive",
     "clear:all": "rm -rf node_modules packages/*/node_modules",
-    "refresh": "pnpm clear:all && pnpm install:all"
+    "refresh": "pnpm clear:all && pnpm install:all",
+    "packages:publish": "//pnpm publish --no-git-checks --access=public"
   }
 }

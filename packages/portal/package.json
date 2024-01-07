@@ -1,6 +1,7 @@
 {
   "name": "@jay-react-component/portal",
-  "version": "0.0.1",
+  "private": false,
+  "version": "0.0.2",
   "license": "MIT",
   "dependencies": {
     "react": "^18.2.0",
