@@ -37,8 +37,9 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "install:all": "pnpm install --recursive",
-    "clear:all": "rm -rf node_modules packages/*/node_modules",
-    "refresh": "pnpm clear:all && pnpm install:all",
+    "clear:all": "rm -rf .parcel-cache storybook-static node_modules packages/*/node_modules packages/*/dist",
+    "build:packages": "parcel build 'packages/*' --no-cache",
+    "refresh": "pnpm clear:all && pnpm install:all && pnpm build:packages",
     "packages:publish": "//pnpm publish --no-git-checks --access=public"
   }
 }
