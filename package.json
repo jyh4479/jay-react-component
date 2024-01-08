@@ -4,12 +4,9 @@
   "repository": "https://github.com/jyh4479/jay-react-component.git",
   "author": "jyh4479 <jyh.dev@gmail.com>",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "type": "module",
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/preset-react": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3",
@@ -23,6 +20,8 @@
     "@storybook/react": "^7.6.6",
     "@storybook/react-vite": "^7.6.6",
     "@storybook/test": "^7.6.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
     "babel-loader": "^9.1.3",
