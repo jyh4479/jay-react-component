@@ -7,6 +7,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: ease border 0.2s;
+}
+
+.date-picker-layout:hover {
+    border: 1px var(--jay-blue-1800) solid;
+    transition: ease border 0.2s;
 }
 
 .date-picker-layout > div {
