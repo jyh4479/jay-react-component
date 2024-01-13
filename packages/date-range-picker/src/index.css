@@ -1,8 +1,15 @@
 @import "@jay-react-component/stylesheet";
 
+:root {
+    --main-color: var(--jay-blue-1900);
+    --main-border-color: var(--jay-gray-500);
+    --main-text-color: var(--jay-gray-500);
+    --main-background-color: var(--jay-white);
+}
+
 .date-picker-layout {
     padding: 4px 11px;
-    border: 1px var(--jay-gray-500) solid;
+    border: 1px var(--main-border-color) solid;
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -11,7 +18,7 @@
 }
 
 .date-picker-layout:hover {
-    border: 1px var(--jay-blue-1800) solid;
+    border: 1px var(--main-color) solid;
     transition: ease border 0.2s;
 }
 
@@ -27,25 +34,20 @@
 }
 
 .date-picker-layout > div > input::placeholder {
-    color: var(--jay-gray-500);
+    color: var(--main-text-color);
 }
 
 .date-picker-arrow-svg {
     padding: 0 8px;
     width: 1em;
     height: 1em;
-    stroke: var(--jay-gray-500);
-    fill: var(--jay-gray-500);
+    stroke: var(--main-text-color);
+    fill: var(--main-text-color);
 }
 
 .date-picker-calendar-svg {
     width: 1em;
     height: 1em;
-    stroke: var(--jay-gray-500);
-    fill: var(--jay-white);
+    stroke: var(--main-text-color);
+    fill: var(--main-background-color);
 }
-
-.test {
-    color: var(--jay-gray-500);
-}
-
