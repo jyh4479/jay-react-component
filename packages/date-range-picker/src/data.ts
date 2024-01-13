@@ -1,7 +1,14 @@
-type Mode = "DAY" | "MONTH" | "YEAR";
+export type DateMode = "DAY" | "MONTH" | "YEAR";
+export type FocusState = "NONE" | "LEFT" | "RIGHT";
 
-export const SELECT_MODE: Record<Mode, string> = {
+export const SELECTED_MODE: Record<DateMode, DateMode> = {
     DAY: "DAY",
     MONTH: "MONTH",
     YEAR: "YEAR",
+};
+
+export const SELECTED_FOCUS: Record<FocusState, FocusState> = {
+    NONE: "NONE",
+    LEFT: "LEFT",
+    RIGHT: "RIGHT"
 };
