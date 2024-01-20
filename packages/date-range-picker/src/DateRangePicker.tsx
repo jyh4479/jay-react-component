@@ -1,4 +1,4 @@
-import React, {FunctionComponent, useEffect, useState} from "react";
+import React, {FunctionComponent, useEffect, useRef, useState} from "react";
 import {DateMode, FocusState, SELECTED_FOCUS, SELECTED_MODE} from "./data";
 import {Calendar as CalendarSvg, SwapRight as SwapRightSvg} from "./svg";
 import Calendar from "./Calendar";
@@ -13,6 +13,8 @@ const DateRangePicker: FunctionComponent = () => {
     const [selectMode, setSelectMode] = useState<DateMode>(SELECTED_MODE.DAY);
     const [focusState, setFocusState] = useState<FocusState>(SELECTED_FOCUS.NONE);
 
+    const leftInputRef = useRef<HTMLInputElement>(null);
+
     useEffect(() => {
         console.log(focusState);
     }, [focusState])
@@ -24,10 +26,14 @@ const DateRangePicker: FunctionComponent = () => {
             </Portal>
             <div
                 className={`date-picker-layout`}
-                onClick={() => setFocusState(SELECTED_FOCUS.LEFT)}
+                onClick={() => {
+                    if (focusState === SELECTED_FOCUS.RIGHT) return;
+                    leftInputRef.current?.focus();
+                }}
                 onBlur={() => setFocusState(SELECTED_FOCUS.NONE)}>
                 <div>
                     <input
+                        ref={leftInputRef}
                         onClick={e => e.stopPropagation()}
                         onFocus={(e) => setFocusState(SELECTED_FOCUS.LEFT)}
                         type="text"
