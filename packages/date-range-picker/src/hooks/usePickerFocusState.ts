@@ -40,16 +40,11 @@ const usePickerFocusState = (parentRef: RefObject<HTMLDivElement>, leftInputRef:
         setFocusState(SELECTED_FOCUS.RIGHT);
     }
 
-    const childInputOnClick: MouseEventHandler<HTMLInputElement> = (e) => {
-        e.stopPropagation();
-    }
-
     return {
         focusState,
         parentOnClick,
         leftInputOnFocus,
         rightInputOnFocus,
-        childInputOnClick
     };
 }
 
