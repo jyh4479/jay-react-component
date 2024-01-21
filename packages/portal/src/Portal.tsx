@@ -1,4 +1,4 @@
-import React, {FunctionComponent, ReactNode, useEffect} from "react";
+import React, {FunctionComponent, ReactNode} from "react";
 import {createPortal} from "react-dom";
 
 interface PortalProps {
@@ -19,16 +19,16 @@ const Portal: FunctionComponent<PortalProps> = (props: PortalProps) => {
         document.body.appendChild(portalRoot);
     }
 
-    const el = document.createElement("div");
+    // const el = document.createElement("div");
 
-    useEffect(() => {
-        portalRoot?.appendChild(el);
-        return () => {
-            portalRoot?.removeChild(el);
-        };
-    }, []);
+    // useEffect(() => {
+    //     portalRoot?.appendChild(el);
+    //     return () => {
+    //         portalRoot?.removeChild(el);
+    //     };
+    // }, []);
 
-    return createPortal(children, el);
+    return createPortal(children, portalRoot);
 };
 
 export {Portal};
