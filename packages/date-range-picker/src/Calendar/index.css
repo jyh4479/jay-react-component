@@ -1,8 +1,34 @@
 @import "@jay-react-component/stylesheet";
 
 .calendar-layout {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+
     width: 300px;
     height: 300px;
     border-radius: 6px;
     box-shadow: 0 0 50px var(--jay-gray-500);
+}
+
+.calendar-layout::before {
+    position: absolute;
+    content: "before";
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    transition: transform ease 0.1s;
+}
+
+.calendar-layout.left::before {
+    color: red;
+}
+
+.calendar-layout.right::before {
+    color: yellow;
+    transform: translateX(50%);
+}
+
+.hide {
+    display: none;
 }

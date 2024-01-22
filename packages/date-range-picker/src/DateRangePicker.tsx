@@ -1,9 +1,10 @@
-import React, {FunctionComponent, useEffect, useRef, useState} from "react";
-import {DateMode, FocusState, SELECTED_FOCUS, SELECTED_MODE} from "./data";
+import React, {FunctionComponent, useRef, useState} from "react";
+import {DateMode, SELECTED_FOCUS, SELECTED_MODE} from "./data";
 import {Calendar as CalendarSvg, SwapRight as SwapRightSvg} from "./svg";
 import Calendar from "./Calendar";
 import "./index.css";
 import {Portal} from "@jay-react-component/portal";
+import {usePickerFocusState} from "./hooks";
 
 const DateRangePicker: FunctionComponent = () => {
 
@@ -11,43 +12,49 @@ const DateRangePicker: FunctionComponent = () => {
     const [selectedStartDate, setSelectedStartDate] = useState<number>(-1);
     const [selectedEndDate, setSelectedEndDate] = useState<number>(-1);
     const [selectMode, setSelectMode] = useState<DateMode>(SELECTED_MODE.DAY);
-    const [focusState, setFocusState] = useState<FocusState>(SELECTED_FOCUS.NONE);
 
+    const parentRef = useRef<HTMLInputElement>(null);
     const leftInputRef = useRef<HTMLInputElement>(null);
+    const rightInputRef = useRef<HTMLInputElement>(null);
 
-    useEffect(() => {
-        console.log(focusState);
-    }, [focusState])
+    const {
+        focusState,
+        parentOnClick,
+        leftInputOnFocus,
+        rightInputOnFocus
+    } = usePickerFocusState(parentRef, leftInputRef, rightInputRef);
 
     return (
         <>
             <Portal>
-                <Calendar/>
+                <Calendar
+                    display={focusState !== SELECTED_FOCUS.NONE}
+                    focusState={focusState}
+                />
             </Portal>
             <div
-                className={`date-picker-layout`}
-                onClick={() => {
-                    if (focusState === SELECTED_FOCUS.RIGHT) return;
-                    leftInputRef.current?.focus();
-                }}
-                onBlur={() => setFocusState(SELECTED_FOCUS.NONE)}>
+                ref={parentRef}
+                className={`date-picker-layout ${focusState !== SELECTED_FOCUS.NONE ? 'picker-focus' : null}`}
+                onClick={parentOnClick}
+            >
                 <div>
                     <input
                         ref={leftInputRef}
-                        onClick={e => e.stopPropagation()}
-                        onFocus={(e) => setFocusState(SELECTED_FOCUS.LEFT)}
-                        type="text"
-                        placeholder={"Start date"}/>
+                        onFocus={leftInputOnFocus}
+                        type={"text"}
+                        placeholder={"Start date"}
+                    />
                 </div>
                 <div>
                     <SwapRightSvg className={`date-picker-arrow-svg`}/>
                 </div>
                 <div>
                     <input
-                        onClick={e => e.stopPropagation()}
-                        onFocus={(e) => setFocusState(SELECTED_FOCUS.RIGHT)}
-                        type="text"
-                        placeholder={"End date"}/>
+                        ref={rightInputRef}
+                        onFocus={rightInputOnFocus}
+                        type={"text"}
+                        placeholder={"End date"}
+                    />
                 </div>
                 <div>
                     <CalendarSvg className={`date-picker-calendar-svg`}/>
