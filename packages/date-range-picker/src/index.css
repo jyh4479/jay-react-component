@@ -15,12 +15,15 @@
     align-items: center;
     justify-content: center;
     transition: ease border 0.2s;
-    cursor: pointer;
 }
 
 .date-picker-layout:hover {
     border: 1px var(--main-color) solid;
     transition: ease border 0.2s;
+}
+
+.picker-focus {
+    border: 1px var(--main-color) solid;
 }
 
 .date-picker-layout > div {
