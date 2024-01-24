@@ -4,7 +4,7 @@ import {Calendar as CalendarSvg, SwapRight as SwapRightSvg} from "./svg";
 import Calendar from "./Calendar";
 import "./index.css";
 import {Portal} from "@jay-react-component/portal";
-import {usePickerFocusState} from "./hooks";
+import {useComponentPosition, usePickerFocusState} from "./hooks";
 
 const DateRangePicker: FunctionComponent = () => {
 
@@ -23,6 +23,8 @@ const DateRangePicker: FunctionComponent = () => {
         leftInputOnFocus,
         rightInputOnFocus
     } = usePickerFocusState(parentRef, leftInputRef, rightInputRef);
+
+    const datePickerPosition = useComponentPosition(parentRef);
 
     return (
         <>
