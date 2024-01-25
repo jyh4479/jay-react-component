@@ -5,6 +5,7 @@ import Calendar from "./Calendar";
 import "./index.css";
 import {Portal} from "@jay-react-component/portal";
 import {useComponentPosition, usePickerFocusState} from "./hooks";
+import DatePickerContext from "./context";
 
 const DateRangePicker: FunctionComponent = () => {
 
@@ -27,7 +28,16 @@ const DateRangePicker: FunctionComponent = () => {
     const datePickerPosition = useComponentPosition(parentRef);
 
     return (
-        <>
+        <DatePickerContext.Provider value={{
+            currentDate,
+            setCurrentDate,
+            selectedStartDate,
+            setSelectedStartDate,
+            selectedEndDate,
+            setSelectedEndDate,
+            selectMode,
+            setSelectMode
+        }}>
             <Portal>
                 <Calendar
                     display={focusState !== SELECTED_FOCUS.NONE}
@@ -62,7 +72,7 @@ const DateRangePicker: FunctionComponent = () => {
                     <CalendarSvg className={`date-picker-calendar-svg`}/>
                 </div>
             </div>
-        </>
+        </DatePickerContext.Provider>
     )
 }
 
