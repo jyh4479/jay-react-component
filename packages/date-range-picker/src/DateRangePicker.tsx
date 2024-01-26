@@ -42,6 +42,7 @@ const DateRangePicker: FunctionComponent = () => {
                 <Calendar
                     display={focusState !== SELECTED_FOCUS.NONE}
                     focusState={focusState}
+                    style={{left: datePickerPosition.x, top: datePickerPosition.y}}
                 />
             </Portal>
             <div
