@@ -4,8 +4,9 @@ import {Calendar as CalendarSvg, SwapRight as SwapRightSvg} from "./svg";
 import Calendar from "./Calendar";
 import "./index.css";
 import {Portal} from "@jay-react-component/portal";
-import {useComponentPosition, usePickerFocusState} from "./hooks";
+import {usePickerFocusState} from "./hooks";
 import DatePickerContext from "./context";
+import useDialogComponentPosition from "./hooks/useDialogComponentPosition";
 
 const DateRangePicker: FunctionComponent = () => {
 
@@ -14,18 +15,19 @@ const DateRangePicker: FunctionComponent = () => {
     const [selectedEndDate, setSelectedEndDate] = useState<number>(-1);
     const [selectMode, setSelectMode] = useState<DateMode>(SELECTED_MODE.DAY);
 
-    const parentRef = useRef<HTMLInputElement>(null);
+    const datePickerRef = useRef<HTMLDivElement>(null);
     const leftInputRef = useRef<HTMLInputElement>(null);
     const rightInputRef = useRef<HTMLInputElement>(null);
+    const calendarRef = useRef<HTMLDivElement>(null);
 
     const {
         focusState,
-        parentOnClick,
+        datePickerOnClick,
         leftInputOnFocus,
         rightInputOnFocus
-    } = usePickerFocusState(parentRef, leftInputRef, rightInputRef);
+    } = usePickerFocusState(datePickerRef, leftInputRef, rightInputRef);
 
-    const datePickerPosition = useComponentPosition(parentRef);
+    const datePickerPosition = useDialogComponentPosition(datePickerRef, calendarRef);
 
     return (
         <DatePickerContext.Provider value={{
@@ -38,17 +40,54 @@ const DateRangePicker: FunctionComponent = () => {
             selectMode,
             setSelectMode
         }}>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
             <Portal>
                 <Calendar
+                    ref={calendarRef}
                     display={focusState !== SELECTED_FOCUS.NONE}
                     focusState={focusState}
                     style={{left: datePickerPosition.x, top: datePickerPosition.y}}
                 />
             </Portal>
             <div
-                ref={parentRef}
+                ref={datePickerRef}
                 className={`date-picker-layout ${focusState !== SELECTED_FOCUS.NONE ? 'picker-focus' : null}`}
-                onClick={parentOnClick}
+                onClick={datePickerOnClick}
             >
                 <div>
                     <input
@@ -73,6 +112,51 @@ const DateRangePicker: FunctionComponent = () => {
                     <CalendarSvg className={`date-picker-calendar-svg`}/>
                 </div>
             </div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
+            <div>123</div>
         </DatePickerContext.Provider>
     )
 }

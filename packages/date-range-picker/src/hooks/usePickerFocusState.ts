@@ -18,7 +18,7 @@ const usePickerFocusState = (parentRef: RefObject<HTMLDivElement>, leftInputRef:
         }
     };
 
-    const parentOnClick: MouseEventHandler<HTMLDivElement> = (e) => {
+    const datePickerOnClick: MouseEventHandler<HTMLDivElement> = (e) => {
         if (focusState === SELECTED_FOCUS.LEFT) {
             leftInputRef.current?.focus();
             return;
@@ -42,7 +42,7 @@ const usePickerFocusState = (parentRef: RefObject<HTMLDivElement>, leftInputRef:
 
     return {
         focusState,
-        parentOnClick,
+        datePickerOnClick,
         leftInputOnFocus,
         rightInputOnFocus,
     };

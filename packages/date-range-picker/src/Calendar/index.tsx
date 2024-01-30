@@ -16,7 +16,7 @@ const Calendar: FunctionComponent<PropsType> = forwardRef((props, ref) => {
         <div
             ref={ref}
             className={`calendar-layout ${!display ? 'hide' : ''} 
-                    ${focusState === SELECTED_FOCUS.LEFT ? 'left' : 'right'}`}
+            ${focusState === SELECTED_FOCUS.LEFT ? 'left' : 'right'}`}
             style={style}
         >
             Calendar
