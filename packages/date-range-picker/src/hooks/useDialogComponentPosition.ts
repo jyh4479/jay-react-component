@@ -15,13 +15,12 @@ const useDialogComponentPosition = (parentComponentRef: RefObject<HTMLElement>, 
             ? {x: parentElementInfo.x, y: parentElementInfo.y + parentElementInfo.height + window.scrollY}
             : {x: parentElementInfo.x, y: parentElementInfo.y - dialogElementInfo.height + window.scrollY};
 
-        console.log(dialogComponentPosition);
-
         setComponentPosition(dialogComponentPosition);
     }
 
     useEffect(() => {
         updateComponentPosition();
+
         const handleResize = () => {
             updateComponentPosition();
         }
