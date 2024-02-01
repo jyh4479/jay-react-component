@@ -4,9 +4,9 @@ import {Calendar as CalendarSvg, SwapRight as SwapRightSvg} from "./svg";
 import Calendar from "./Calendar";
 import "./index.css";
 import {Portal} from "@jay-react-component/portal";
-import {usePickerFocusState} from "./hooks";
+import {useComponentPosition, usePickerFocusState} from "./hooks";
 import DatePickerContext from "./context";
-import useDialogComponentPosition from "./hooks/useDialogComponentPosition";
+import Dialog from "./Dialog";
 
 const DateRangePicker: FunctionComponent = () => {
 
@@ -18,7 +18,6 @@ const DateRangePicker: FunctionComponent = () => {
     const datePickerRef = useRef<HTMLDivElement>(null);
     const leftInputRef = useRef<HTMLInputElement>(null);
     const rightInputRef = useRef<HTMLInputElement>(null);
-    const calendarRef = useRef<HTMLDivElement>(null);
 
     const {
         focusState,
@@ -27,7 +26,7 @@ const DateRangePicker: FunctionComponent = () => {
         rightInputOnFocus
     } = usePickerFocusState(datePickerRef, leftInputRef, rightInputRef);
 
-    const datePickerPosition = useDialogComponentPosition(datePickerRef, calendarRef);
+    const datePickerPosition = useComponentPosition(datePickerRef);
 
     return (
         <DatePickerContext.Provider value={{
@@ -77,12 +76,14 @@ const DateRangePicker: FunctionComponent = () => {
             <div>123</div>
             <div>123</div>
             <Portal>
-                <Calendar
-                    ref={calendarRef}
+                <Dialog
                     display={focusState !== SELECTED_FOCUS.NONE}
-                    focusState={focusState}
-                    style={{left: datePickerPosition.x, top: datePickerPosition.y}}
-                />
+                    parentComponentPosition={datePickerPosition}
+                >
+                    <Calendar
+                        focusState={focusState}
+                    />
+                </Dialog>
             </Portal>
             <div
                 ref={datePickerRef}
