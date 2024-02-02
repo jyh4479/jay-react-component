@@ -15,6 +15,7 @@ const DateRangePicker: FunctionComponent = () => {
     const [selectedEndDate, setSelectedEndDate] = useState<number>(-1);
     const [selectMode, setSelectMode] = useState<DateMode>(SELECTED_MODE.DAY);
 
+    const dialogRef = useRef<HTMLDivElement>(null);
     const datePickerRef = useRef<HTMLDivElement>(null);
     const leftInputRef = useRef<HTMLInputElement>(null);
     const rightInputRef = useRef<HTMLInputElement>(null);
@@ -24,7 +25,7 @@ const DateRangePicker: FunctionComponent = () => {
         datePickerOnClick,
         leftInputOnFocus,
         rightInputOnFocus
-    } = usePickerFocusState(datePickerRef, leftInputRef, rightInputRef);
+    } = usePickerFocusState(dialogRef, datePickerRef, leftInputRef, rightInputRef);
 
     const datePickerPosition = useComponentPosition(datePickerRef);
 
@@ -77,6 +78,7 @@ const DateRangePicker: FunctionComponent = () => {
             <div>123</div>
             <Portal>
                 <Dialog
+                    ref={dialogRef}
                     display={focusState !== SELECTED_FOCUS.NONE}
                     parentComponentPosition={datePickerPosition}
                 >

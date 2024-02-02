@@ -1,4 +1,4 @@
-import React, {FunctionComponent, ReactNode} from "react";
+import React, {forwardRef, ReactNode} from "react";
 import "./index.css";
 
 type Position = {
@@ -12,17 +12,19 @@ type PropsType = {
     children?: ReactNode
 }
 
-const Dialog: FunctionComponent<PropsType> = (props) => {
+const Dialog = forwardRef<HTMLDivElement, PropsType>((props, ref) => {
 
     const {display = true, parentComponentPosition, children} = props;
 
     return (
-        <div className={`dialog-layout ${display ? '' : 'hide'}`}
-             style={{top: parentComponentPosition?.y, left: parentComponentPosition?.x}}
+        <div
+            ref={ref}
+            className={`dialog-layout ${display ? '' : 'hide'}`}
+            style={{top: parentComponentPosition?.y, left: parentComponentPosition?.x}}
         >
             {children}
         </div>
     )
-}
+});
 
 export default Dialog;

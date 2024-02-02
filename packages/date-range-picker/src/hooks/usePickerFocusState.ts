@@ -1,7 +1,7 @@
 import {FocusEventHandler, MouseEventHandler, RefObject, useEffect, useState} from "react";
 import {FocusState, SELECTED_FOCUS} from "../data";
 
-const usePickerFocusState = (parentRef: RefObject<HTMLDivElement>, leftInputRef: RefObject<HTMLInputElement>, rightInputRef: RefObject<HTMLInputElement>) => {
+const usePickerFocusState = (dialogRef: RefObject<HTMLDivElement>, parentRef: RefObject<HTMLDivElement>, leftInputRef: RefObject<HTMLInputElement>, rightInputRef: RefObject<HTMLInputElement>) => {
 
     const [focusState, setFocusState] = useState<FocusState>(SELECTED_FOCUS.NONE);
 
@@ -13,7 +13,7 @@ const usePickerFocusState = (parentRef: RefObject<HTMLDivElement>, leftInputRef:
     }, []);
 
     const handleOutsideClick = (e: any) => {
-        if (parentRef.current && !parentRef.current.contains(e.target)) {
+        if (parentRef.current && !parentRef.current.contains(e.target) && dialogRef.current && !dialogRef.current.contains(e.target)) {
             setFocusState(SELECTED_FOCUS.NONE);
         }
     };
