@@ -1,7 +1,7 @@
 import {FocusEventHandler, MouseEventHandler, RefObject, useEffect, useState} from "react";
 import {FocusState, SELECTED_FOCUS} from "../data";
 
-const usePickerFocusState = (dialogRef: RefObject<HTMLDivElement>, parentRef: RefObject<HTMLDivElement>, leftInputRef: RefObject<HTMLInputElement>, rightInputRef: RefObject<HTMLInputElement>) => {
+const usePickerFocusState = (parentRef: RefObject<HTMLDivElement>, leftInputRef: RefObject<HTMLInputElement>, rightInputRef: RefObject<HTMLInputElement>, dialogRef: RefObject<HTMLDivElement>,) => {
 
     const [focusState, setFocusState] = useState<FocusState>(SELECTED_FOCUS.NONE);
 

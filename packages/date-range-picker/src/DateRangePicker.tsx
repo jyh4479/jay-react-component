@@ -25,7 +25,7 @@ const DateRangePicker: FunctionComponent = () => {
         datePickerOnClick,
         leftInputOnFocus,
         rightInputOnFocus
-    } = usePickerFocusState(dialogRef, datePickerRef, leftInputRef, rightInputRef);
+    } = usePickerFocusState(datePickerRef, leftInputRef, rightInputRef, dialogRef);
 
     const datePickerPosition = useComponentPosition(datePickerRef);
 
@@ -40,51 +40,13 @@ const DateRangePicker: FunctionComponent = () => {
             selectMode,
             setSelectMode
         }}>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
             <Portal>
                 <Dialog
                     ref={dialogRef}
                     display={focusState !== SELECTED_FOCUS.NONE}
                     parentComponentPosition={datePickerPosition}
                 >
-                    <Calendar
-                        focusState={focusState}
-                    />
+                    <Calendar focusState={focusState}/>
                 </Dialog>
             </Portal>
             <div
@@ -115,51 +77,6 @@ const DateRangePicker: FunctionComponent = () => {
                     <CalendarSvg className={`date-picker-calendar-svg`}/>
                 </div>
             </div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
-            <div>123</div>
         </DatePickerContext.Provider>
     )
 }
