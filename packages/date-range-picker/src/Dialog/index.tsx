@@ -1,26 +1,28 @@
-import React, {ForwardedRef, forwardRef, MutableRefObject, ReactNode, useEffect, useRef, useState} from "react";
+import React, {ForwardedRef, forwardRef, MutableRefObject, ReactNode, RefObject, useRef} from "react";
 import "./index.css";
-
-type Position = {
-    x: number
-    y: number
-}
+import {useComponentPosition, useComponentSize, useDialogPosition} from "../hooks";
 
 type PropsType = {
     display?: boolean
-    parentComponentPosition?: Position
+    parentComponentRef?: RefObject<HTMLElement>
     children?: ReactNode
 }
 
 const Dialog = forwardRef((props: PropsType, ref: ForwardedRef<HTMLDivElement>) => {
 
-    const {display = true, parentComponentPosition, children} = props;
+    const {display = true, parentComponentRef, children} = props;
     const internalRef = useRef<HTMLDivElement>(null);
-    const dialogDirection = useState("below");
 
-    useEffect(() => {
-        console.log(internalRef.current?.getBoundingClientRect());
-    }, [display])
+    const parentComponentPosition = useComponentPosition(parentComponentRef, [display]);
+    const parentComponentSize = useComponentSize(parentComponentRef, []);
+    const dialogSize = useComponentSize(internalRef, [display]);
+
+    const dialogPosition = useDialogPosition(parentComponentPosition, parentComponentSize, dialogSize);
+
+
+    // useEffect(() => {
+    //     console.log(dialogPosition)
+    // }, [dialogPosition])
 
     return (
         <div
@@ -34,7 +36,7 @@ const Dialog = forwardRef((props: PropsType, ref: ForwardedRef<HTMLDivElement>) 
                 }
             }}
             className={`dialog-layout ${display ? '' : 'hide'}`}
-            style={{top: parentComponentPosition?.y, left: parentComponentPosition?.x}}
+            style={{top: dialogPosition.y, left: dialogPosition.x}}
         >
             {children}
         </div>
