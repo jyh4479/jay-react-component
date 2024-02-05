@@ -1,4 +1,4 @@
-import {RefObject, useEffect, useLayoutEffect, useState} from "react";
+import {RefObject, useLayoutEffect, useState} from "react";
 
 const useComponentSize = (componentRef: RefObject<HTMLElement> | undefined, trigger: Array<any>) => {
 
@@ -10,7 +10,7 @@ const useComponentSize = (componentRef: RefObject<HTMLElement> | undefined, trig
         const currentComponentSize = componentRef.current?.getBoundingClientRect();
 
         setComponentSize({w: currentComponentSize.width, h: currentComponentSize.height});
-    }, [...trigger])
+    }, [componentRef?.current, ...trigger])
 
     return componentSize;
 }

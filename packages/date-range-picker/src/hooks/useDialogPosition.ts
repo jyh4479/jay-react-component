@@ -1,28 +1,48 @@
 import {Direction, Position, Size} from "../types/common";
-import {useLayoutEffect, useState} from "react";
+import {useEffect, useLayoutEffect, useState} from "react";
 
-const useDialogPosition = (parentComponentPosition: Position, parentComponentSize: Size, dialogSize: Size, direction: Direction = "ABOVE") => {
+const DIALOG_GAP: number = 12;
 
-    const [dialogPosition, setDialogPosition] = useState({x: 0, y: 0});
+const useDialogPosition = (parentComponentPosition: Position, parentComponentSize: Size, dialogSize: Size) => {
+
+    const [dialogPosition, setDialogPosition] = useState<Position>({x: 0, y: 0});
+    const [dialogDirection, setDialogDirection] = useState<Direction>("BELOW");
 
     const getPosition = () => {
 
         const scrollYPosition = window.scrollY;
 
-        switch (direction) {
+        switch (dialogDirection) {
             case "ABOVE":
-                return {x: parentComponentPosition.x, y: parentComponentPosition.y - dialogSize.h + scrollYPosition};
+                return {
+                    x: parentComponentPosition.x,
+                    y: parentComponentPosition.y - dialogSize.h + scrollYPosition - DIALOG_GAP
+                };
             case "BELOW":
                 return {
                     x: parentComponentPosition.x,
-                    y: parentComponentPosition.y + parentComponentSize.h + scrollYPosition
-                }
+                    y: parentComponentPosition.y + parentComponentSize.h + scrollYPosition + DIALOG_GAP
+                };
         }
     }
 
     useLayoutEffect(() => {
         setDialogPosition(getPosition());
-    }, [parentComponentPosition, parentComponentSize, dialogSize, dialogSize])
+    }, [parentComponentPosition, parentComponentSize, dialogSize, dialogDirection])
+
+    useEffect(() => {
+
+        const scrollYPosition = window.scrollY;
+        const scrollEvent = () => {
+            // console.log(parentComponentPosition.y + parentComponentSize.h + scrollYPosition + DIALOG_GAP);
+        }
+
+        window.addEventListener("scroll", scrollEvent);
+
+        return () => {
+            window.removeEventListener("scroll", scrollEvent);
+        }
+    }, [parentComponentPosition, parentComponentSize])
 
     return dialogPosition;
 }

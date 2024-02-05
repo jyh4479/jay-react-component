@@ -1,6 +1,6 @@
-import React, {ForwardedRef, forwardRef, MutableRefObject, ReactNode, RefObject, useRef} from "react";
+import React, {ForwardedRef, forwardRef, MutableRefObject, ReactNode, RefObject, useEffect, useRef} from "react";
 import "./index.css";
-import {useComponentPosition, useComponentSize, useDialogPosition} from "../hooks";
+import {useComponentPosition, useComponentSize, useDialogDirection, useDialogPosition} from "../hooks";
 
 type PropsType = {
     display?: boolean
@@ -17,12 +17,12 @@ const Dialog = forwardRef((props: PropsType, ref: ForwardedRef<HTMLDivElement>) 
     const parentComponentSize = useComponentSize(parentComponentRef, []);
     const dialogSize = useComponentSize(internalRef, [display]);
 
+    const dialogDirection = useDialogDirection(internalRef, [display]);
     const dialogPosition = useDialogPosition(parentComponentPosition, parentComponentSize, dialogSize);
 
-
-    // useEffect(() => {
-    //     console.log(dialogPosition)
-    // }, [dialogPosition])
+    useEffect(() => {
+        console.log(dialogDirection);
+    }, [dialogDirection])
 
     return (
         <div
