@@ -49,7 +49,7 @@ const DateRangePicker: FunctionComponent = () => {
             </Portal>
             <div
                 ref={datePickerRef}
-                className={`date-picker-layout ${focusState !== SELECTED_FOCUS.NONE ? 'picker-focus' : null}`}
+                className={`date-picker-layout ${focusState !== SELECTED_FOCUS.NONE ? 'picker-focus' : null} ${focusState === SELECTED_FOCUS.LEFT ? 'left' : 'right'}`}
                 onClick={datePickerOnClick}
             >
                 <div>

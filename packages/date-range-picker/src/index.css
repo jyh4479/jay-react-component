@@ -8,13 +8,35 @@
 }
 
 .date-picker-layout {
+    position: relative;
     padding: 4px 11px;
+    background: var(--main-background-color);
     border: 1px var(--main-border-color) solid;
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: ease border 0.2s;
+}
+
+.date-picker-layout::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 3px;
+
+    top: 100%;
+    left: 0;
+
+    background-color: #0eff0e;
+}
+
+.date-picker-layout.left::before {
+    left: 0;
+}
+
+.date-picker-layout.right::before {
+    left: 50%;
 }
 
 .date-picker-layout:hover {
