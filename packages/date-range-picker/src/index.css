@@ -19,19 +19,19 @@
     transition: ease border 0.2s;
 }
 
-.date-picker-layout::before {
-    content: "";
-    position: absolute;
-    width: 50%;
-    height: 3px;
+/*.date-picker-layout::before {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    width: 50%;*/
+/*    height: 3px;*/
 
-    bottom: 0;
-    left: 0;
+/*    bottom: 0;*/
+/*    left: 0;*/
 
-    background-color: #0eff0e;
+/*    background-color: #0eff0e;*/
 
-    transition: ease-out left 0.3s;
-}
+/*    transition: ease-out left 0.3s;*/
+/*}*/
 
 .date-picker-layout.left::before {
     left: 0;

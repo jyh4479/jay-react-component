@@ -1,5 +1,5 @@
 import {FocusEventHandler, MouseEventHandler, RefObject, useEffect, useState} from "react";
-import {FocusState, SELECTED_FOCUS} from "../data";
+import {FocusState, SELECTED_FOCUS} from "../types/common";
 
 const usePickerFocusState = (parentRef: RefObject<HTMLDivElement>, leftInputRef: RefObject<HTMLInputElement>, rightInputRef: RefObject<HTMLInputElement>, dialogRef: RefObject<HTMLDivElement>,) => {
 

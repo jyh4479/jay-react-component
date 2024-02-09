@@ -1,5 +1,4 @@
 import React, {FunctionComponent, useRef, useState} from "react";
-import {DateMode, SELECTED_FOCUS, SELECTED_MODE} from "./data";
 import {Calendar as CalendarSvg, SwapRight as SwapRightSvg} from "./svg";
 import Calendar from "./Calendar";
 import "./index.css";
@@ -7,6 +6,8 @@ import {Portal} from "@jay-react-component/portal";
 import {usePickerFocusState} from "./hooks";
 import DatePickerContext from "./context";
 import Dialog from "./Dialog";
+import ActiveBar from "./ActiveBar";
+import {DateMode, SELECTED_FOCUS, SELECTED_MODE} from "./types/common";
 
 const DateRangePicker: FunctionComponent = () => {
 
@@ -74,6 +75,7 @@ const DateRangePicker: FunctionComponent = () => {
                 <div>
                     <CalendarSvg className={`date-picker-calendar-svg`}/>
                 </div>
+                <ActiveBar/>
             </div>
         </DatePickerContext.Provider>
     )
