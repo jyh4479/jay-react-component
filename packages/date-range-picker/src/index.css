@@ -25,10 +25,12 @@
     width: 50%;
     height: 3px;
 
-    top: 100%;
+    bottom: 0;
     left: 0;
 
     background-color: #0eff0e;
+
+    transition: ease-out left 0.3s;
 }
 
 .date-picker-layout.left::before {
