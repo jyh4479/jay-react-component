@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from "react";
 import "./index.css";
-import {FocusState, SELECTED_FOCUS} from "../types/common";
+import {FocusState} from "../types/common";
 
 type PropsType = {
     focusState: FocusState
@@ -12,7 +12,7 @@ const Calendar: FunctionComponent<PropsType> = (props) => {
 
     return (
         <div
-            className={`calendar-layout ${focusState === SELECTED_FOCUS.LEFT ? 'left' : 'right'}`}
+            className={"calendar-layout"}
         >
             Calendar
             123
