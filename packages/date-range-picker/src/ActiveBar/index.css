@@ -5,7 +5,7 @@
     bottom: 0;
     left: 11px;
 
-    transition: all ease-out 0.2s;
+    transition: all ease-out var(--animation-duration-normal);
 }
 
 .active-bar.hide {
