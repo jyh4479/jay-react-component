@@ -1,4 +1,13 @@
 .active-bar {
     position: absolute;
-    left: 0;
+    height: 1px;
+    background: red;
+    bottom: 0;
+    left: 11px;
+
+    transition: all ease-out 0.2s;
+}
+
+.active-bar.hide {
+    visibility: hidden;
 }

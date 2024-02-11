@@ -65,17 +65,21 @@
     color: var(--main-text-color);
 }
 
+.arrow-svg-wrapper {
+    width: 32px;
+}
+
 .date-picker-arrow-svg {
+    width: 16px;
+    height: 16px;
     padding: 0 8px;
-    width: 1em;
-    height: 1em;
     stroke: var(--main-text-color);
     fill: var(--main-text-color);
 }
 
 .date-picker-calendar-svg {
-    width: 1em;
-    height: 1em;
+    width: 16px;
+    height: 16px;
     stroke: var(--main-text-color);
     fill: var(--main-background-color);
 }

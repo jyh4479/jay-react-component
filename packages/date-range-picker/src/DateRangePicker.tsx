@@ -61,7 +61,7 @@ const DateRangePicker: FunctionComponent = () => {
                         placeholder={"Start date"}
                     />
                 </div>
-                <div>
+                <div className={"arrow-svg-wrapper"}>
                     <SwapRightSvg className={`date-picker-arrow-svg`}/>
                 </div>
                 <div>
@@ -73,9 +73,9 @@ const DateRangePicker: FunctionComponent = () => {
                     />
                 </div>
                 <div>
-                    <CalendarSvg className={`date-picker-calendar-svg`}/>
+                    <CalendarSvg className={"date-picker-calendar-svg"}/>
                 </div>
-                <ActiveBar/>
+                <ActiveBar focusState={focusState} inputRef={leftInputRef}/>
             </div>
         </DatePickerContext.Provider>
     )
