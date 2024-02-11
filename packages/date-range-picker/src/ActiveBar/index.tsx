@@ -22,7 +22,10 @@ const ActiveBar: FunctionComponent<PropsType> = (props) => {
 
     const barPositionByFocus = (focusedState: FocusState) => {
 
+        // 11 is padding value
         if (focusedState === SELECTED_FOCUS.LEFT) barPosition.current = 11;
+
+        // (43 + width) is sum of padding, svg, input width
         else if (focusedState === SELECTED_FOCUS.RIGHT) barPosition.current = 43 + width;
 
         return barPosition.current;

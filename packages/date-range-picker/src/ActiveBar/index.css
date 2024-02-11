@@ -1,7 +1,7 @@
 .active-bar {
     position: absolute;
     height: 1px;
-    background: red;
+    background: var(--main-color);
     bottom: 0;
     left: 11px;
 
