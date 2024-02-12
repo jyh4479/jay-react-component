@@ -1,6 +1,7 @@
 import React, {FunctionComponent} from "react";
 import "./index.css";
 import {FocusState} from "../types/common";
+import DayPicker from "./DayPicker";
 
 type PropsType = {
     focusState: FocusState
@@ -14,8 +15,7 @@ const Calendar: FunctionComponent<PropsType> = (props) => {
         <div
             className={"calendar-layout"}
         >
-            Calendar
-            123
+            <DayPicker/>
         </div>
     )
 };
