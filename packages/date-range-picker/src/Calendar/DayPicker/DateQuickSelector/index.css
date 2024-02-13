@@ -1,0 +1,30 @@
+.quick-selector-layout {
+    margin: 0;
+    list-style: none;
+    width: 104px;
+    height: 336px;
+    padding: 8px;
+
+    border-right: 1px solid var(--main-border-color);
+}
+
+.quick-selector-layout > li {
+    display: flex;
+    align-items: center;
+
+    padding: 1px 8px;
+    margin-top: 8px;
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    transition: all ease var(--animation-duration-normal);
+}
+
+.quick-selector-layout > li:first-child {
+    margin-top: 0;
+}
+
+.quick-selector-layout > li:hover {
+    background: var(--main-background-hover-color);
+}
