@@ -5,4 +5,6 @@
 .arrow-svg {
     width: 22px;
     height: 40px;
+    stroke: var(--main-text-color);
+    fill: var(--main-background-color);
 }
