@@ -32,3 +32,28 @@
 .right-layout {
     width: 457px;
 }
+
+.picker-body {
+    height: 309px;
+    border-bottom: 1px solid var(--main-border-color);
+    display: flex;
+}
+
+.picker-footer {
+    height: 42px;
+}
+
+.day-picker-content-layout {
+    width: 288px;
+    border-right: 1px solid var(--main-border-color);
+}
+
+.time-picker-content-layout {
+    width: 168px;
+}
+
+.content-header {
+    width: 100%;
+    height: 41px;
+    border-bottom: 1px solid var(--main-border-color);
+}
