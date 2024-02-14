@@ -6,8 +6,13 @@ const DayPicker = () => {
     return (
         <div className={"day-picker-layout"}>
 
-            <DateQuickSelector/>
+            <div className={"left-layout"}>
+                <DateQuickSelector/>
+            </div>
 
+            <div className={"right-layout"}>
+
+            </div>
             {/*<DoubleLeftArrow className={"arrow-svg"}/>*/}
             {/*<LeftArrow className={"arrow-svg"}/>*/}
             {/*<RightArrow className={"arrow-svg"}/>*/}

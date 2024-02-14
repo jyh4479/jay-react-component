@@ -1,14 +1,14 @@
-.quick-selector-layout {
+.quick-selector-list {
     margin: 0;
     list-style: none;
-    width: 104px;
-    height: 336px;
-    padding: 8px;
-
-    border-right: 1px solid var(--main-border-color);
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 0;
 }
 
-.quick-selector-layout > li {
+.quick-selector-list > li {
     display: flex;
     align-items: center;
 
@@ -17,14 +17,15 @@
     border-radius: 5px;
 
     cursor: pointer;
+    user-select: none;
 
     transition: all ease var(--animation-duration-normal);
 }
 
-.quick-selector-layout > li:first-child {
+.quick-selector-list > li:first-child {
     margin-top: 0;
 }
 
-.quick-selector-layout > li:hover {
+.quick-selector-list > li:hover {
     background: var(--main-background-hover-color);
 }

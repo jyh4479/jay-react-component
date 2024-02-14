@@ -1,5 +1,7 @@
 .day-picker-layout {
-    width: 457px;
+    display: flex;
+    width: 577px;
+    height: 352px;
 }
 
 .arrow-svg {
@@ -17,4 +19,16 @@
 
 .arrow-svg:active {
     transform: scale(0.9);
+}
+
+.left-layout {
+    margin: 0;
+    width: 104px;
+    padding: 8px;
+
+    border-right: 1px solid var(--main-border-color);
+}
+
+.right-layout {
+    width: 457px;
 }

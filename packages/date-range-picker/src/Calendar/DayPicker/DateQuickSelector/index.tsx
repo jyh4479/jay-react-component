@@ -3,7 +3,7 @@ import "./index.css";
 
 const DateQuickSelector = () => {
     return (
-        <ul className={"quick-selector-layout"}>
+        <ul className={"quick-selector-list"}>
             <li>Now ~ EOD</li>
             <li>Last 7 Days</li>
             <li>Last 14 Days</li>
