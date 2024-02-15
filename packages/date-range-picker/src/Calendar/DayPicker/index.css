@@ -4,23 +4,6 @@
     height: 352px;
 }
 
-.arrow-svg {
-    width: 22px;
-    height: 40px;
-    stroke: var(--main-text-color);
-    fill: var(--main-background-color);
-    cursor: pointer;
-    transition: stroke ease var(--animation-duration-normal);
-}
-
-.arrow-svg:hover {
-    stroke: var(--main-black-color);
-}
-
-.arrow-svg:active {
-    transform: scale(0.9);
-}
-
 .left-layout {
     margin: 0;
     width: 104px;

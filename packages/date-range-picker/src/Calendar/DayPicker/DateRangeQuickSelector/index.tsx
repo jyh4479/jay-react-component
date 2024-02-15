@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css";
 
-const DateQuickSelector = () => {
+const DateRangeQuickSelector = () => {
     return (
         <ul className={"quick-selector-list"}>
             <li>Now ~ EOD</li>
@@ -13,4 +13,4 @@ const DateQuickSelector = () => {
     )
 }
 
-export default DateQuickSelector;
+export default DateRangeQuickSelector;
