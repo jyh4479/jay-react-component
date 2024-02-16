@@ -8,13 +8,30 @@
     padding: 0 8px;
 }
 
-.header-title {
+.header-title-layout {
     display: flex;
     align-items: center;
     justify-content: center;
 
     width: 182.41px;
     height: 40px;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+
+    cursor: pointer;
+    user-select: none;
+
+    transition: all ease var(--animation-duration-normal);
+}
+
+.header-title:hover {
+    color: var(--main-color);
 }
 
 .arrow-svg {
