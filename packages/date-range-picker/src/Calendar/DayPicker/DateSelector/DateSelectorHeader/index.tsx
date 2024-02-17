@@ -2,7 +2,7 @@ import React from "react";
 import "./index.css";
 import {DoubleLeftArrow, DoubleRightArrow, LeftArrow, RightArrow} from "../../../../svg";
 
-const DaySelectorHeader = () => {
+const DateSelectorHeader = () => {
     return (
         <div className={"header-layout"}>
             <DoubleLeftArrow className={"arrow-svg"}/>
@@ -19,4 +19,4 @@ const DaySelectorHeader = () => {
     )
 }
 
-export default DaySelectorHeader;
+export default DateSelectorHeader;

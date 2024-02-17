@@ -1,5 +1,11 @@
-.body-layout {
+.date-selector-body {
     width: 252px;
     height: 252px;
     padding: 8px 18px;
+}
+
+.date-selector-header {
+    width: 100%;
+    height: 41px;
+    border-bottom: 1px solid var(--main-border-color);
 }

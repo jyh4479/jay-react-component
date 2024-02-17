@@ -1,0 +1,15 @@
+.time-selector-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 41px;
+    border-bottom: 1px solid var(--main-border-color);
+
+    user-select: none;
+}
+
+.time-selector-body {
+
+}

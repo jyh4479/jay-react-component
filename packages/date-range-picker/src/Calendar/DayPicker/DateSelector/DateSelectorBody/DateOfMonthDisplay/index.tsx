@@ -1,6 +1,6 @@
 import React from "react";
 import "./index.css";
-import {getDateOfCurrentMonth} from "../../../../utils/date";
+import {getDateOfCurrentMonth} from "../../../../../utils/date";
 
 const DateOfMonthDisplay = () => {
 

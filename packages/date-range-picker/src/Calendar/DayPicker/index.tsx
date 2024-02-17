@@ -1,8 +1,8 @@
 import React from "react";
 import "./index.css";
 import DateRangeQuickSelector from "./DateRangeQuickSelector";
-import DaySelectorHeader from "./SelectorHeader/DaySelectorHeader";
 import DateSelector from "./DateSelector";
+import TimeSelector from "./TimeSelector";
 
 const DayPicker = () => {
     return (
@@ -15,18 +15,13 @@ const DayPicker = () => {
             <div className={"right-layout"}>
                 <div className={"picker-body"}>
                     <div className={"day-picker-content-layout"}>
-                        <div className={"content-header"}>
-                            <DaySelectorHeader/>
-                        </div>
-                        <div className={"content-body"}>
-                            <DateSelector/>
-                        </div>
+                        <DateSelector/>
                     </div>
                     <div className={"time-picker-content-layout"}>
-                        <div className={"content-header"}></div>
-                        <div className={"content-body"}></div>
+                        <TimeSelector/>
                     </div>
                 </div>
+
                 <div className={"picker-footer"}>
                     <button>ok</button>
                 </div>

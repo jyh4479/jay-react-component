@@ -1,14 +1,19 @@
 import React from "react";
 import "./index.css";
-import DayOfWeekDisplay from "./DayOfWeekDisplay";
-import DateOfMonthDisplay from "./DateOfMonthDisplay";
+import DateSelectorHeader from "./DateSelectorHeader";
+import DateSelectorBody from "./DateSelectorBody";
 
 const DateSelector = () => {
     return (
-        <div className={"body-layout"}>
-            <DayOfWeekDisplay/>
-            <DateOfMonthDisplay/>
-        </div>
+        <>
+            <div className={"date-selector-header"}>
+                <DateSelectorHeader/>
+            </div>
+            <div className={"date-selector-body"}>
+                <DateSelectorBody/>
+            </div>
+        </>
+
     )
 }
 
