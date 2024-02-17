@@ -2,7 +2,7 @@ import React from "react";
 import "./index.css";
 import DateRangeQuickSelector from "./DateRangeQuickSelector";
 import DaySelectorHeader from "./SelectorHeader/DaySelectorHeader";
-import DaySelector from "./DaySelector";
+import DateSelector from "./DateSelector";
 
 const DayPicker = () => {
     return (
@@ -19,7 +19,7 @@ const DayPicker = () => {
                             <DaySelectorHeader/>
                         </div>
                         <div className={"content-body"}>
-                            <DaySelector/>
+                            <DateSelector/>
                         </div>
                     </div>
                     <div className={"time-picker-content-layout"}>

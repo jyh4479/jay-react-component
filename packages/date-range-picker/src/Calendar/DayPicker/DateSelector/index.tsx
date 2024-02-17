@@ -3,7 +3,7 @@ import "./index.css";
 import DayOfWeekDisplay from "./DayOfWeekDisplay";
 import DateOfMonthDisplay from "./DateOfMonthDisplay";
 
-const DaySelector = () => {
+const DateSelector = () => {
     return (
         <div className={"body-layout"}>
             <DayOfWeekDisplay/>
@@ -12,4 +12,4 @@ const DaySelector = () => {
     )
 }
 
-export default DaySelector;
+export default DateSelector;
