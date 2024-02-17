@@ -1,0 +1,35 @@
+.date-display-layout {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.date-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 24px;
+
+    padding: 6px 0;
+
+    cursor: pointer;
+}
+
+.date-inner-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 24px;
+    height: 24px;
+
+    border-radius: 5px;
+
+    transition: all ease var(--animation-duration-normal);
+}
+
+.date-display:hover .date-inner-display {
+    background: var(--main-color);
+    color: var(--main-white-color);
+}

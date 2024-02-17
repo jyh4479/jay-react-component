@@ -1,0 +1,28 @@
+export const getDateOfCurrentMonth = (timestamp: number): number[] => {
+    const currentDate = new Date(timestamp);
+    const currentMonth = currentDate.getMonth();
+    const startDate = new Date(currentDate.getFullYear(), currentMonth, 1);
+    const endDate = new Date(currentDate.getFullYear(), currentMonth + 1, 0);
+
+    const datesArray = [];
+
+    // Add dates of the previous month
+    const prevMonthEndDate = new Date(currentDate.getFullYear(), currentMonth, 0).getDate();
+    const prevMonthStartDate = new Date(currentDate.getFullYear(), currentMonth - 1, prevMonthEndDate - startDate.getDay() + 1);
+    for (let i = 0; i < startDate.getDay(); i++) {
+        datesArray.push(new Date(prevMonthStartDate.getTime() + i * 24 * 60 * 60 * 1000).getTime());
+    }
+
+    // Add dates of the current month
+    for (let i = 1; i <= endDate.getDate(); i++) {
+        datesArray.push(new Date(currentDate.getFullYear(), currentMonth, i).getTime());
+    }
+
+    // Add dates of the next month
+    const nextMonthDaysToAdd = 42 - datesArray.length;
+    for (let i = 1; i <= nextMonthDaysToAdd; i++) {
+        datesArray.push(new Date(currentDate.getFullYear(), currentMonth + 1, i).getTime());
+    }
+
+    return datesArray;
+}

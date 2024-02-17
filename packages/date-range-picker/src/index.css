@@ -6,6 +6,7 @@
     --main-text-color: var(--jay-gray-500);
     --main-background-color: var(--jay-white);
     --main-background-hover-color: var(--jay-gray-200);
+    --main-white-color: var(--jay-white);
     --main-black-color: var(--jay-black);
 
     --animation-duration-normal: 0.3s;
