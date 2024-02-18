@@ -1,0 +1,31 @@
+.time-picker-scroll-layout {
+    width: 56px;
+    height: 260px;
+    margin: 5px 0;
+
+    border-right: 1px solid var(--main-border-color);
+
+    overflow: scroll;
+}
+
+.time-picker-scroll-layout:last-child {
+    border: 0;
+}
+
+.time-picker-scroll-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 28px;
+    margin: 0 4px;
+
+    transition: all ease var(--animation-duration-normal);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.time-picker-scroll-cell:hover {
+    background: var(--main-background-hover-color);
+}

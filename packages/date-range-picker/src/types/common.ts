@@ -17,6 +17,7 @@ export const SELECTED_FOCUS: Record<FocusState, FocusState> = {
 }
 
 export type DateMode = "DAY" | "MONTH" | "YEAR";
+export type Time = "SECOND" | "MINUTE" | "HOUR" | "DAY"
 export type FocusState = "NONE" | "LEFT" | "RIGHT";
 
 export const SELECTED_MODE: Record<DateMode, DateMode> = {
