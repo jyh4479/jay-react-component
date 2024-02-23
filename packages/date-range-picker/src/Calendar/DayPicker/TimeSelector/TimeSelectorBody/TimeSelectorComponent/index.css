@@ -3,13 +3,19 @@
     height: 260px;
     margin: 5px 0;
 
-    border-right: 1px solid var(--main-border-color);
-
     overflow: scroll;
 }
 
-.time-picker-scroll-layout:last-child {
-    border: 0;
+.time-picker-scroll-layout:before {
+    position: absolute;
+    content: "";
+    width: 0.556px;
+    height: 260px;
+    background: var(--main-border-color);
+}
+
+.time-picker-scroll-layout:first-child:before {
+    content: none;
 }
 
 .time-picker-scroll-cell {
