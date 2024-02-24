@@ -45,6 +45,7 @@ const usePickerFocusState = (parentRef: RefObject<HTMLDivElement>, leftInputRef:
         datePickerOnClick,
         leftInputOnFocus,
         rightInputOnFocus,
+        setFocusState
     };
 }
 

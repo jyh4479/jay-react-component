@@ -3,7 +3,7 @@ import {Calendar as CalendarSvg, SwapRight as SwapRightSvg} from "./svg";
 import Calendar from "./Calendar";
 import "./index.css";
 import {Portal} from "@jay-react-component/portal";
-import {usePickerFocusState} from "./hooks";
+import {usePickerFocusState, useSelectDateAndTime} from "./hooks";
 import DatePickerContext from "./context";
 import Dialog from "./Dialog";
 import ActiveBar from "./ActiveBar";
@@ -11,6 +11,7 @@ import {DateMode, SELECTED_FOCUS, SELECTED_MODE} from "./types/common";
 
 const DateRangePicker: FunctionComponent = () => {
 
+    // FIXME: 해당 상태를 hook으로 옮기고 비즈니스 로직은 숨긴 뒤 함수만 Provider로 넘겨 자식 컴포넌트에서 사용할 수 있도록 구현하기
     const [currentDate, setCurrentDate] = useState<number>(new Date().getTime());
     const [selectedStartDate, setSelectedStartDate] = useState<number>(-1);
     const [selectedEndDate, setSelectedEndDate] = useState<number>(-1);
@@ -25,8 +26,11 @@ const DateRangePicker: FunctionComponent = () => {
         focusState,
         datePickerOnClick,
         leftInputOnFocus,
-        rightInputOnFocus
+        rightInputOnFocus,
+        setFocusState
     } = usePickerFocusState(datePickerRef, leftInputRef, rightInputRef, dialogRef);
+
+    const {} = useSelectDateAndTime(focusState, setFocusState);
 
     return (
         <DatePickerContext.Provider value={{
