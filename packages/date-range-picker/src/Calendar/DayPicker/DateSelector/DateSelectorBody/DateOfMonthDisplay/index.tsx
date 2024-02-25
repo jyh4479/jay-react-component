@@ -1,6 +1,6 @@
 import React from "react";
 import "./index.css";
-import {getDateOfCurrentMonth} from "../../../../../utils/date";
+import {getDateOfCurrentMonth, isToday} from "../../../../../utils/date";
 
 const DateOfMonthDisplay = () => {
 
@@ -11,7 +11,7 @@ const DateOfMonthDisplay = () => {
             {currentDateTimestampArray.map(timestamp => {
                 return (
                     <div key={`date-key-${timestamp}`} className={"date-display"}>
-                        <div className={"date-inner-display"}>
+                        <div className={`date-inner-display ${isToday(timestamp) ? "today" : null}`}>
                             {new Date(timestamp).getDate()}
                         </div>
                     </div>

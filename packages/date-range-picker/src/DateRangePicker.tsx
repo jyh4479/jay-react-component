@@ -11,12 +11,6 @@ import {DateMode, SELECTED_FOCUS, SELECTED_MODE} from "./types/common";
 
 const DateRangePicker: FunctionComponent = () => {
 
-    // FIXME: 해당 상태를 hook으로 옮기고 비즈니스 로직은 숨긴 뒤 함수만 Provider로 넘겨 자식 컴포넌트에서 사용할 수 있도록 구현하기
-    const [currentDate, setCurrentDate] = useState<number>(new Date().getTime());
-    const [selectedStartDate, setSelectedStartDate] = useState<number>(-1);
-    const [selectedEndDate, setSelectedEndDate] = useState<number>(-1);
-    const [selectMode, setSelectMode] = useState<DateMode>(SELECTED_MODE.DAY);
-
     const dialogRef = useRef<HTMLDivElement>(null);
     const datePickerRef = useRef<HTMLDivElement>(null);
     const leftInputRef = useRef<HTMLInputElement>(null);
@@ -30,18 +24,12 @@ const DateRangePicker: FunctionComponent = () => {
         setFocusState
     } = usePickerFocusState(datePickerRef, leftInputRef, rightInputRef, dialogRef);
 
-    const {} = useSelectDateAndTime(focusState, setFocusState);
+    // TODO: 해당 훅에서 하위 component에서 사용할 함수 정의하기
+    const {getCurrentDate} = useSelectDateAndTime(focusState, setFocusState);
 
     return (
         <DatePickerContext.Provider value={{
-            currentDate,
-            setCurrentDate,
-            selectedStartDate,
-            setSelectedStartDate,
-            selectedEndDate,
-            setSelectedEndDate,
-            selectMode,
-            setSelectMode
+            getCurrentDate
         }}>
             <Portal>
                 <Dialog

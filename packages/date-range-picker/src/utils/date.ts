@@ -26,3 +26,23 @@ export const getDateOfCurrentMonth = (timestamp: number): number[] => {
 
     return datesArray;
 }
+
+export const isToday = (timeStamp: number): boolean => {
+    const currentDate = new Date().getTime();
+
+    if (new Date(currentDate).getFullYear() !== new Date(timeStamp).getFullYear()) return false;
+    if (new Date(currentDate).getMonth() !== new Date(timeStamp).getMonth()) return false;
+    if (new Date(currentDate).getDate() !== new Date(timeStamp).getDate()) return false;
+
+    return true;
+}
+
+export const isSameMonthInYear = (firstTimestamp: number, secondTimestamp: number): boolean => {
+    const firstDateObject = new Date(firstTimestamp);
+    const secondDateObject = new Date(secondTimestamp);
+
+    if (firstDateObject.getFullYear() !== secondDateObject.getFullYear()) return false;
+    if (firstDateObject.getMonth() !== secondDateObject.getMonth()) return false;
+
+    return true;
+}

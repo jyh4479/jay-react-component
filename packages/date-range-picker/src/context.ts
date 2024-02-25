@@ -1,17 +1,13 @@
-import {Context, createContext, Dispatch, SetStateAction} from "react";
-import {DateMode} from "./data";
+import {createContext} from "react";
 
-interface DatePickerContextType {
-    currentDate: number
-    setCurrentDate: Dispatch<SetStateAction<number>>
-    selectedStartDate: number,
-    setSelectedStartDate: Dispatch<SetStateAction<number>>
-    selectedEndDate: number
-    setSelectedEndDate: Dispatch<SetStateAction<number>>
-    selectMode: string,
-    setSelectMode: Dispatch<SetStateAction<DateMode>>
+export interface DatePickerContextType {
+    getCurrentDate: () => number;
 }
 
-const DatePickerContext: Context<DatePickerContextType | undefined> = createContext<DatePickerContextType | undefined>(undefined);
+const datePickerDefaultContext = {
+    getCurrentDate: () => 0
+}
+
+const DatePickerContext = createContext<DatePickerContextType>(datePickerDefaultContext);
 
 export default DatePickerContext;

@@ -33,3 +33,7 @@
     background: var(--main-color);
     color: var(--main-white-color);
 }
+
+.today {
+    outline: 1px solid var(--main-color);
+}
