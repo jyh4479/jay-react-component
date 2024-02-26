@@ -10,13 +10,33 @@ const useSelectDateAndTime = (focusState: FocusState, setFocusState: Dispatch<Se
     const [selectedTempStartTimestamp, setSelectedTempStartTimestamp] = useState<number>(-1);
     const [selectedTempEndTimestamp, setSelectedTempEndTimestamp] = useState<number>(-1);
 
-    //TODO: 시간을 보여줄 상태에 대한 설계 필요
+    const onClickDate = (timestamp: number) => {
+        setSelectedStartTimestamp(prev => {
+            const currentSelectedStartDate = new Date(prev);
+            const inputDate = new Date(timestamp);
 
-    const getCurrentDate = () => {
-        return new Date().getTime();
+            currentSelectedStartDate.setFullYear(inputDate.getFullYear());
+            currentSelectedStartDate.setMonth(inputDate.getMonth());
+            currentSelectedStartDate.setDate(inputDate.getDate());
+
+            return currentSelectedStartDate.getTime();
+        })
     }
 
-    return {getCurrentDate};
+    const onClickHour = (hour: number) => {
+
+    }
+
+    const onClickMinute = (minute: number) => {
+
+    }
+
+    const onClickSecond = (second: number) => {
+
+    }
+
+
+    return {selectedStartTimestamp, selectedEndTimestamp, onClickDate, onClickHour, onClickMinute, onClickSecond};
 }
 
 export default useSelectDateAndTime;

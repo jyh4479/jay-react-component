@@ -1,11 +1,21 @@
 import {createContext} from "react";
 
 export interface DatePickerContextType {
-    getCurrentDate: () => number;
+    selectedStartTimestamp: number;
+    selectedEndTimestamp: number;
+    onClickDate: Function;
+    onClickHour: Function;
+    onClickMinute: Function;
+    onClickSecond: Function;
 }
 
 const datePickerDefaultContext = {
-    getCurrentDate: () => 0
+    selectedStartTimestamp: -1,
+    selectedEndTimestamp: -1,
+    onClickDate: () => null,
+    onClickHour: () => null,
+    onClickMinute: () => null,
+    onClickSecond: () => null,
 }
 
 const DatePickerContext = createContext<DatePickerContextType>(datePickerDefaultContext);

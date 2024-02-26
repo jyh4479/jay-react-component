@@ -1,4 +1,4 @@
-import React, {FunctionComponent, useRef, useState} from "react";
+import React, {FunctionComponent, useRef} from "react";
 import {Calendar as CalendarSvg, SwapRight as SwapRightSvg} from "./svg";
 import Calendar from "./Calendar";
 import "./index.css";
@@ -7,7 +7,7 @@ import {usePickerFocusState, useSelectDateAndTime} from "./hooks";
 import DatePickerContext from "./context";
 import Dialog from "./Dialog";
 import ActiveBar from "./ActiveBar";
-import {DateMode, SELECTED_FOCUS, SELECTED_MODE} from "./types/common";
+import {SELECTED_FOCUS} from "./types/common";
 
 const DateRangePicker: FunctionComponent = () => {
 
@@ -24,12 +24,24 @@ const DateRangePicker: FunctionComponent = () => {
         setFocusState
     } = usePickerFocusState(datePickerRef, leftInputRef, rightInputRef, dialogRef);
 
-    // TODO: 해당 훅에서 하위 component에서 사용할 함수 정의하기
-    const {getCurrentDate} = useSelectDateAndTime(focusState, setFocusState);
+    //TODO: start time, end time 설정에 대한 hook
+    const {
+        selectedStartTimestamp,
+        selectedEndTimestamp,
+        onClickDate,
+        onClickHour,
+        onClickMinute,
+        onClickSecond
+    } = useSelectDateAndTime(focusState, setFocusState);
 
     return (
         <DatePickerContext.Provider value={{
-            getCurrentDate
+            selectedStartTimestamp,
+            selectedEndTimestamp,
+            onClickDate,
+            onClickHour,
+            onClickMinute,
+            onClickSecond
         }}>
             <Portal>
                 <Dialog
