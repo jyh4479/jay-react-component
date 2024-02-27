@@ -1,15 +1,14 @@
-import React from "react";
+import React, {useContext} from "react";
 import TimeSelectorComponent from "../TimeSelectorComponent";
+import DatePickerContext from "../../../../../context";
 
 const HourSelector = () => {
 
-    const hoursList = Array.from({length: 24}, (_, index) => index);
-    const hourOnClick = (time: number) => {
-        console.log(time);
-    }
+    const {onClickHour} = useContext(DatePickerContext);
+    const hoursList = Array.from({length: 24}, (_, index) => index)
 
     return (
-        <TimeSelectorComponent timeType={"HOUR"} timeList={hoursList} timeOnClick={hourOnClick}/>
+        <TimeSelectorComponent timeType={"HOUR"} timeList={hoursList} timeOnClick={onClickHour}/>
     )
 }
 
