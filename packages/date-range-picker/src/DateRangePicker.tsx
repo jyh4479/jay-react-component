@@ -3,7 +3,7 @@ import {Calendar as CalendarSvg, SwapRight as SwapRightSvg} from "./svg";
 import Calendar from "./Calendar";
 import "./index.css";
 import {Portal} from "@jay-react-component/portal";
-import {usePickerFocusState, useSelectDateAndTime} from "./hooks";
+import {useDisplayDateAndTime, usePickerFocusState, useSelectDateAndTime} from "./hooks";
 import DatePickerContext from "./context";
 import Dialog from "./Dialog";
 import ActiveBar from "./ActiveBar";
@@ -34,6 +34,9 @@ const DateRangePicker: FunctionComponent = () => {
         onClickSecond
     } = useSelectDateAndTime(focusState, setFocusState);
 
+    const displayStartDateAndTime = useDisplayDateAndTime(selectedStartTimestamp);
+    const displayEndDateAndTime = useDisplayDateAndTime(selectedEndTimestamp);
+
     return (
         <DatePickerContext.Provider value={{
             selectedStartTimestamp,
@@ -62,7 +65,9 @@ const DateRangePicker: FunctionComponent = () => {
                         ref={leftInputRef}
                         onFocus={leftInputOnFocus}
                         type={"text"}
+                        value={displayStartDateAndTime}
                         placeholder={"Start date"}
+                        readOnly
                     />
                 </div>
                 <div className={"arrow-svg-wrapper"}>
@@ -73,7 +78,9 @@ const DateRangePicker: FunctionComponent = () => {
                         ref={rightInputRef}
                         onFocus={rightInputOnFocus}
                         type={"text"}
+                        value={displayEndDateAndTime}
                         placeholder={"End date"}
+                        readOnly
                     />
                 </div>
                 <div>

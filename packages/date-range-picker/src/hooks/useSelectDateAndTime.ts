@@ -20,6 +20,7 @@ const useSelectDateAndTime = (focusState: FocusState, setFocusState: Dispatch<Se
 
         if (focusState === "NONE") return;
 
+        //FIXME: prev의 초기값이 -1로 지정되어있어서 최초 날짜 선택시 시간이 8시 59분 59초로 보이는 현상
         timestampSetter[focusState](prev => {
             const currentSelectedStartDate = new Date(prev);
             const inputDate = new Date(timestamp);

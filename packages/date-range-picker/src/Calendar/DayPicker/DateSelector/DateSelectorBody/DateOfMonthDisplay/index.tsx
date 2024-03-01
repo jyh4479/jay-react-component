@@ -12,11 +12,9 @@ const DateOfMonthDisplay = () => {
         <div className={"date-display-layout"}>
             {currentDateTimestampArray.map(timestamp => {
                 return (
-                    <div key={`date-key-${timestamp}`} className={"date-display"}>
-                        <div
-                            className={`date-inner-display ${isToday(timestamp) ? "today" : null}`}
-                            onClick={() => onClickDate(timestamp)}
-                        >
+                    <div key={`date-key-${timestamp}`} className={"date-display"}
+                         onClick={() => onClickDate(timestamp)}>
+                        <div className={`date-inner-display ${isToday(timestamp) ? "today" : null}`}>
                             {new Date(timestamp).getDate()}
                         </div>
                     </div>

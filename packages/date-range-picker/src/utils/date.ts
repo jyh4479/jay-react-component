@@ -1,8 +1,8 @@
 export const getDateOfCurrentMonth = (timestamp: number): number[] => {
     const currentDate = new Date(timestamp);
     const currentMonth = currentDate.getMonth();
-    const startDate = new Date(currentDate.getFullYear(), currentMonth, 1);
-    const endDate = new Date(currentDate.getFullYear(), currentMonth + 1, 0);
+    const startDate = new Date(currentDate.getFullYear(), currentMonth, 1, 0, 0, 0, 0);
+    const endDate = new Date(currentDate.getFullYear(), currentMonth + 1, 0, 0, 0, 0, 0);
 
     const datesArray = [];
 
@@ -45,4 +45,18 @@ export const isSameMonthInYear = (firstTimestamp: number, secondTimestamp: numbe
     if (firstDateObject.getMonth() !== secondDateObject.getMonth()) return false;
 
     return true;
+}
+
+export const dateDisplayFromTimestamp = (timestamp: number) => {
+    const dateObject = new Date(timestamp);
+
+    const year = dateObject.getFullYear();
+    const month = dateObject.getMonth();
+    const date = dateObject.getDate();
+
+    const hour = dateObject.getHours();
+    const minute = dateObject.getMinutes();
+    const second = dateObject.getSeconds();
+
+    return `${year}/${month}/${date} ${hour}:${minute}:${second}`;
 }
