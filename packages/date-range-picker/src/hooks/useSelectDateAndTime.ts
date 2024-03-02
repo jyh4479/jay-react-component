@@ -4,13 +4,12 @@ import {DatePickerContextType} from "../context";
 
 const useSelectDateAndTime = (focusState: FocusState, setFocusState: Dispatch<SetStateAction<FocusState>>): DatePickerContextType => {
 
-    const [selectedStartTimestamp, setSelectedStartTimestamp] = useState<number>(-1);
-    const [selectedEndTimestamp, setSelectedEndTimestamp] = useState<number>(-1);
+    const [selectedStartTimestamp, setSelectedStartTimestamp] = useState<number>(0);
+    const [selectedEndTimestamp, setSelectedEndTimestamp] = useState<number>(0);
 
-    const [selectedTempStartTimestamp, setSelectedTempStartTimestamp] = useState<number>(-1);
-    const [selectedTempEndTimestamp, setSelectedTempEndTimestamp] = useState<number>(-1);
+    const [selectedTempStartTimestamp, setSelectedTempStartTimestamp] = useState<number>(0);
+    const [selectedTempEndTimestamp, setSelectedTempEndTimestamp] = useState<number>(0);
 
-    //TODO: focus 상태를 확인하여 start, end 중 어떤 시간을 수정할지 결정하기 - 최대한 분기 태워서 처리하지 않기
     const timestampSetter: Record<Exclude<FocusState, "NONE">, Dispatch<SetStateAction<number>>> = {
         "LEFT": setSelectedStartTimestamp,
         "RIGHT": setSelectedEndTimestamp
@@ -20,7 +19,6 @@ const useSelectDateAndTime = (focusState: FocusState, setFocusState: Dispatch<Se
 
         if (focusState === "NONE") return;
 
-        //FIXME: prev의 초기값이 -1로 지정되어있어서 최초 날짜 선택시 시간이 8시 59분 59초로 보이는 현상
         timestampSetter[focusState](prev => {
             const currentSelectedStartDate = new Date(prev);
             const inputDate = new Date(timestamp);

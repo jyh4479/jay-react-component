@@ -10,8 +10,8 @@ export interface DatePickerContextType {
 }
 
 const datePickerDefaultContext = {
-    selectedStartTimestamp: -1,
-    selectedEndTimestamp: -1,
+    selectedStartTimestamp: 0,
+    selectedEndTimestamp: 0,
     onClickDate: () => null,
     onClickHour: () => null,
     onClickMinute: () => null,
