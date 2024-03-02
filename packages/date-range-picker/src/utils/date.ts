@@ -58,5 +58,9 @@ export const dateDisplayFromTimestamp = (timestamp: number) => {
     const minute = dateObject.getMinutes();
     const second = dateObject.getSeconds();
 
-    return `${year}/${month}/${date} ${hour}:${minute}:${second}`;
+    return `${year}/${addLeadingZero(month)}/${addLeadingZero(date)} ${addLeadingZero(hour)}:${addLeadingZero(minute)}:${addLeadingZero(second)}`;
+}
+
+const addLeadingZero = (number: number) => {
+    return number < 10 ? `0${number}` : number;
 }
