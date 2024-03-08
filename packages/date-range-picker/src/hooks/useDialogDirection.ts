@@ -45,6 +45,16 @@ const useDialogDirection = (componentRef: RefObject<HTMLElement>, trigger: Array
             window.removeEventListener("scroll", updateDialogDirection);
         }
 
+    }, [componentRef?.current])
+
+    useLayoutEffect(() => {
+        if (!componentRef?.current) return;
+
+        const currentComponentPosition = componentRef.current?.getBoundingClientRect();
+
+        if (currentComponentPosition.bottom > window.innerHeight) setDirection("ABOVE");
+        else if (currentComponentPosition.top) setDirection("BELOW");
+
     }, [componentRef?.current, ...trigger])
 
     return direction;
